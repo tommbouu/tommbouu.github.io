@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Robot Mower Finder: Garden Size Selector, Wire Chooser &amp; Quiz | AutoLawn UK</title>
+<meta name="description" content="Free tools: robot mower garden-size selector, boundary wire vs wire-free chooser, and a 6-question 'which mower should I buy?' quiz for UK gardens.">
+<link rel="canonical" href="https://tommbouu.github.io/tools/">
+<meta property="og:title" content="Robot Mower Finder: Garden Size Selector, Wire Chooser &amp; Quiz | AutoLawn UK">
+<meta property="og:description" content="Free tools: robot mower garden-size selector, boundary wire vs wire-free chooser, and a 6-question 'which mower should I buy?' quiz for UK gardens.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tommbouu.github.io/tools/">
+<meta property="og:site_name" content="AutoLawn UK">
+<meta property="og:locale" content="en_GB">
+<link rel="stylesheet" href="/assets/style.css">
+
+</head>
+<body><nav class="nav"><a class="brand" href="/">Auto<span>Lawn</span> UK</a><input type="checkbox" id="menu"><label for="menu" aria-label="Menu">☰</label><ul><li><a href="/">Home</a></li><li><a href="/start-here/">Start Here</a></li><li><a href="/recommended-robot-mowers/">Recommended</a></li><li><a class="on" href="/tools/">Find Your Mower</a></li><li><a href="/category/brand-comparisons/">Comparisons</a></li><li><a href="/about/">About</a></li></ul></nav><main><div class="wrap article"><h1>Find the right robot mower for your garden</h1>
+<p class="lead">Three quick tools. No email required, nothing tracked — they run entirely in your browser.</p>
+
+<div class="tool"><h2 style="margin-top:0">1 · Garden size selector</h2>
+<label for="size-m2">Your lawn size (m²)</label>
+<input type="number" id="size-m2" min="1" placeholder="e.g. 300">
+<p><button class="btn" onclick="runSize()">Get suggestion</button></p>
+<div class="result" id="size-result"></div></div>
+
+<div class="tool"><h2 style="margin-top:0">2 · Boundary wire or wire-free?</h2>
+<label for="w-budget">Budget</label>
+<select id="w-budget"><option value="low">Under £500</option><option value="mid" selected>£500–£1,200</option><option value="high">£1,200+</option></select>
+<label for="w-trees">Tree cover over the lawn</label>
+<select id="w-trees"><option value="open" selected>Mostly open sky</option><option value="some">Some trees</option><option value="heavy">Heavy tree cover</option></select>
+<label for="w-diy">Happy to bury ~100m of wire (or pay someone to)?</label>
+<select id="w-diy"><option value="yes">Yes</option><option value="no" selected>No</option></select>
+<p><button class="btn" onclick="runWire()">Get recommendation</button></p>
+<div class="result" id="wire-result"></div></div>
+
+<div class="tool"><h2 style="margin-top:0">3 · Which robot mower should I buy? (6 questions)</h2>
+<div class="quiz-q"><label for="q-size">Lawn size (m²)</label><input type="number" id="q-size" placeholder="e.g. 300"></div>
+<div class="quiz-q"><label for="q-slope">Slope</label><select id="q-slope"><option value="flat" selected>Flat / gentle</option><option value="moderate">Noticeable slope</option><option value="steep">Steep bank / terraced</option></select></div>
+<div class="quiz-q"><label for="q-budget">Budget</label><select id="q-budget"><option value="under500">Under £500</option><option value="mid" selected>£500–£1,200</option><option value="over1200">£1,200+</option></select></div>
+<div class="quiz-q"><label for="q-pets">Pets using the garden?</label><select id="q-pets"><option value="no" selected>No</option><option value="yes">Yes</option></select></div>
+<div class="quiz-q"><label for="q-trees">Tree cover</label><select id="q-trees"><option value="open" selected>Open sky</option><option value="heavy">Heavy canopy</option></select></div>
+<div class="quiz-q"><label for="q-tech">Comfort with apps/tech</label><select id="q-tech"><option value="ok" selected>Fine with apps</option><option value="low">Keep it simple</option></select></div>
+<p><button class="btn" onclick="runQuiz()">Show my match</button></p>
+<div class="result" id="quiz-result"></div></div>
+
+<h2>Slope explainer: % vs degrees</h2>
+<p>Manufacturers quote slope as a percentage: <strong>rise ÷ run × 100</strong>. A 35% slope ≈ 19°; 80% ≈ 38.7°. Measure yours with a spirit-level app on a plank, then check the model's rating — and keep a safety margin, especially for wet grass. Full detail in the <a href="/best-robot-lawn-mower-slopes-uk/">slopes guide</a>.</p></div></main><footer><div class="wrap foot-grid">
+<div><a class="brand" href="/">Auto<span>Lawn</span> UK</a><p>Simple UK robot lawn mower comparisons for people who want to automate lawn care without wasting £1,000+ on the wrong mower.</p><p class="fineprint">As an affiliate, AutoLawn UK earns from qualifying purchases made through links on this site.</p></div>
+<div><h4>Categories</h4><a href="/category/wire-free/">Wire-Free Robot Mowers</a><a href="/category/small-gardens/">Small Garden Robot Mowers</a><a href="/category/large-gardens/">Large Garden Robot Mowers</a><a href="/category/slopes-uneven/">Slopes & Uneven Lawns</a><a href="/category/brand-comparisons/">Brand Comparisons</a><a href="/category/installation-setup/">Installation & Setup</a><a href="/category/accessories-maintenance/">Accessories & Maintenance</a><a href="/category/deals/">Deals & Discounts</a><a href="/category/buying-guides/">Buying Guides</a></div>
+<div><h4>Site</h4><a href="/start-here/">Start Here</a><a href="/recommended-robot-mowers/">Recommended Mowers</a><a href="/tools/">Decision Tools</a><a href="/about/">About</a><a href="/contact/">Contact</a></div>
+<div><h4>Legal</h4><a href="/affiliate-disclosure/">Affiliate Disclosure</a><a href="/privacy-policy/">Privacy Policy</a></div>
+</div><div class="wrap copy">© 2026 AutoLawn UK. We may earn commission from links on this site. All product names and trademarks belong to their owners.</div></footer><script src="/assets/tools.js"></script></body>
+</html>

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tommbouu.github.io/sitemap.xml
