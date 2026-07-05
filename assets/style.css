@@ -85,6 +85,30 @@ footer h4{color:#fff;margin:0 0 10px}
 @media(max-width:760px){.foot-grid{grid-template-columns:1fr 1fr}}
 .copy{border-top:1px solid #24382c;padding:16px 20px;font-size:.8rem;color:#8fa398}
 .fineprint{font-size:.8rem;color:#8fa398}
+/* product cards */
+.pcard{border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;margin:26px 0;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.pcard-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:10px}
+.pcard-head h3{margin:0;font-size:1.2rem}
+.pcard-price{font-weight:800;color:var(--green-d);font-size:1.1rem;white-space:nowrap}
+.badge-best{background:#f2faf5;border-left:4px solid var(--green);padding:8px 12px;border-radius:0 6px 6px 0;font-size:.93rem;margin:12px 0 6px}
+.badge-avoid{background:#fdf6f0;border-left:4px solid var(--amber);padding:8px 12px;border-radius:0 6px 6px 0;font-size:.93rem;margin:6px 0 12px}
+.pcard-specs{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
+.pcard-specs span{background:var(--bg-soft);border-radius:8px;padding:8px 10px;font-size:.85rem;line-height:1.4}
+.pcard-specs b{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.4px;color:var(--slate)}
+.pcard-pc{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:12px 0}
+@media(max-width:560px){.pcard-pc{grid-template-columns:1fr}}
+.pcard-pc h4{margin:.2em 0;font-size:.9rem;text-transform:uppercase;letter-spacing:.4px}
+.pcard-pc div:first-child h4{color:var(--green-d)}
+.pcard-pc div:last-child h4{color:var(--amber)}
+.pcard-pc ul{margin:4px 0;padding-left:18px;font-size:.92rem}
+.pcard-pc li{margin:4px 0}
+.pcard-cta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin:14px 0 6px}
+.pcard-review{font-weight:600;font-size:.93rem}
+.pcard-checked{font-size:.78rem;color:var(--slate);margin:8px 0 0;border-top:1px dashed var(--line);padding-top:8px}
+/* sources box */
+.sources-box{border:1px solid var(--line);border-radius:var(--radius);padding:18px 22px;margin:30px 0;background:var(--bg-soft);font-size:.9rem}
+.sources-box h3{margin:0 0 8px;font-size:1rem}
+.sources-box ul{margin:8px 0 0;padding-left:20px}
 /* tools */
 .tool{border:1px solid var(--line);border-radius:var(--radius);padding:24px;margin:26px 0;background:var(--bg-soft)}
 .tool label{display:block;font-weight:600;margin:14px 0 6px}
