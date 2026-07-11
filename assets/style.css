@@ -143,3 +143,6 @@ footer h4{color:#fff;margin:0 0 10px}
 .nl-status{min-height:1.4em;font-size:.92rem;margin:10px 0 0;font-weight:600}
 .nl-ok{color:var(--green-d)}
 .nl-err{color:#b03a2e}
+.nl-consent{font-size:.8rem;color:var(--slate);max-width:420px;margin:12px auto 0;line-height:1.5}
+.nl-consent a{text-decoration:underline}
+.nl-consent a:focus-visible{outline:3px solid var(--green);outline-offset:2px;border-radius:2px}

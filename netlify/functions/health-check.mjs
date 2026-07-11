@@ -15,26 +15,30 @@ const CHECKS = [
   { name: "amazon-ocumow", url: "https://www.amazon.co.uk/dp/B0B6G4K1M5?tag=autolawn-21", expect: [200, 301, 302, 303, 405, 503], redirect: "manual" }, // Amazon bot-guards HEAD/GET; any response beats DNS failure
 ];
 
+async function runCheck(c) {
+  const r = { name: c.name, ok: false, status: null };
+  try {
+    const res = await fetch(c.url, {
+      method: c.method || "GET",
+      body: c.body,
+      redirect: c.redirect || "follow",
+      headers: { "user-agent": "AutoLawnUK-HealthCheck/1.0 (+https://autolawnuk.com)" , ...(c.method === "POST" ? { "content-type": "application/json" } : {}) },
+      signal: AbortSignal.timeout(8000),
+    });
+    r.status = res.status;
+    r.ok = c.expect.includes(res.status);
+  } catch (err) {
+    r.error = String(err).slice(0, 120);
+  }
+  return r;
+}
+
 export default async () => {
   const started = new Date().toISOString();
-  const results = [];
-  for (const c of CHECKS) {
-    const r = { name: c.name, ok: false, status: null };
-    try {
-      const res = await fetch(c.url, {
-        method: c.method || "GET",
-        body: c.body,
-        redirect: c.redirect || "follow",
-        headers: { "user-agent": "AutoLawnUK-HealthCheck/1.0 (+https://autolawnuk.com)" , ...(c.method === "POST" ? { "content-type": "application/json" } : {}) },
-        signal: AbortSignal.timeout(8000),
-      });
-      r.status = res.status;
-      r.ok = c.expect.includes(res.status);
-    } catch (err) {
-      r.error = String(err).slice(0, 120);
-    }
-    results.push(r);
-  }
+  // Run all checks concurrently — the previous sequential loop (8 checks x 8s timeout)
+  // could take up to 64s, risking Netlify's scheduled-function execution limit.
+  // Concurrent execution bounds the whole job to ~8s (the slowest single check).
+  const results = await Promise.all(CHECKS.map(runCheck));
   const failures = results.filter((r) => !r.ok);
   console.log(JSON.stringify({
     job: "health-check",
