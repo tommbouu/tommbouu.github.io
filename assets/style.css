@@ -85,6 +85,8 @@ footer h4{color:#fff;margin:0 0 10px}
 @media(max-width:760px){.foot-grid{grid-template-columns:1fr 1fr}}
 .copy{border-top:1px solid #24382c;padding:16px 20px;font-size:.8rem;color:#8fa398}
 .fineprint{font-size:.8rem;color:#8fa398}
+/* editorial byline */
+.byline{font-size:.85rem;color:var(--slate);border:1px solid var(--line);border-radius:8px;padding:10px 14px;margin:14px 0;background:var(--bg-soft);line-height:1.5}
 /* cookie consent banner */
 .cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:60;background:#fff;border-top:1px solid var(--line);box-shadow:0 -4px 20px rgba(0,0,0,.1)}
 .cookie-banner[hidden]{display:none}
@@ -137,3 +139,7 @@ footer h4{color:#fff;margin:0 0 10px}
 .quiz-q{margin:14px 0}
 .newsletter{background:var(--bg-soft);border-radius:var(--radius);padding:26px;text-align:center;margin:36px 0}
 .newsletter input[type=email]{padding:11px;border:1px solid var(--line);border-radius:8px;width:min(320px,80%);font-size:1rem}
+.visually-hidden{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.nl-status{min-height:1.4em;font-size:.92rem;margin:10px 0 0;font-weight:600}
+.nl-ok{color:var(--green-d)}
+.nl-err{color:#b03a2e}

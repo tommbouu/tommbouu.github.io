@@ -105,9 +105,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li>Every price and headline spec is checked against the official UK store or retailer listing, with the check date shown on the page.</li>
 <li>We earn commission on some links (<a href="/affiliate-disclosure/">full disclosure</a>), but recommendations are ordered by fit, not payout.</li>
 </ul></div>
-<div class="newsletter"><h3>Get the monthly UK robot mower price report</h3><p class="muted">One email a month: real price drops and new UK releases. No spam.</p>
-<form action="#" method="post" onsubmit="alert('Newsletter signup will be connected to an email provider — placeholder.');return false;"><input type="email" placeholder="you@example.com" required> <button class="btn" type="submit">Subscribe</button></form>
+<div class="newsletter"><h3>Get the monthly UK robot mower price report</h3><p class="muted">Roughly one email a month: genuine UK price changes, new UK releases and updated recommendations. No spam — unsubscribe any time.</p>
+<form id="nl-form" method="post" action="/api/subscribe" novalidate>
+<label class="visually-hidden" for="nl-email">Email address</label>
+<input type="email" id="nl-email" name="email" placeholder="you@example.com" autocomplete="email" required>
+<input type="text" name="hp" id="nl-hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;height:0;width:0;border:0;padding:0">
+<button class="btn" type="submit" id="nl-btn">Subscribe</button>
+<p class="nl-status" id="nl-status" role="status" aria-live="polite"></p>
+</form>
 </div>
+<script>
+(function(){var f=document.getElementById('nl-form');if(!f)return;var st=document.getElementById('nl-status'),btn=document.getElementById('nl-btn'),em=document.getElementById('nl-email');
+function say(msg,ok){st.textContent=msg;st.className='nl-status '+(ok?'nl-ok':'nl-err');}
+f.addEventListener('submit',function(e){e.preventDefault();
+var email=(em.value||'').trim();
+if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){say('Please enter a valid email address.',false);em.focus();return;}
+btn.disabled=true;say('Subscribing…',true);
+if(typeof gtag==='function')gtag('event','newsletter_form_start');
+fetch('/api/subscribe',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({email:email,hp:document.getElementById('nl-hp').value})})
+.then(function(r){return r.json().then(function(d){return{status:r.status,d:d};});})
+.then(function(res){btn.disabled=false;
+if(res.d&&res.d.ok){say(res.d.message||'Thanks — you\'re subscribed.',true);f.reset();if(typeof gtag==='function')gtag('event','newsletter_subscribe_success');}
+else{say((res.d&&res.d.error)||'Something went wrong — please try again later.',false);if(typeof gtag==='function')gtag('event','newsletter_subscribe_error',{error_code:res.status});}})
+.catch(function(){btn.disabled=false;say('Something went wrong — please try again later.',false);if(typeof gtag==='function')gtag('event','newsletter_subscribe_error',{error_code:0});});});})();
+</script>
 <div class="share" role="group" aria-label="Share this page">
 <span class="share-label">Found this useful? Share it:</span>
 <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fautolawnuk.com%2F" target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3.1h-3.1V8.9c0-.9.25-1.5 1.55-1.5H16.7V4.7c-.3 0-1.25-.1-2.35-.1-2.3 0-3.9 1.4-3.9 4v2.3H7.7V14h2.75v8h3.05z"/></svg></a>
@@ -133,5 +154,5 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <button type="button" id="cookie-accept" class="btn">Accept analytics</button>
 </div>
 </div></div>
-<script>(function(){var K='alu-consent',b=document.getElementById('cookie-banner');function stored(){try{return localStorage.getItem(K);}catch(e){return null;}}function apply(state){var g=state==='granted'?'granted':'denied';try{localStorage.setItem(K,state);}catch(e){}if(typeof gtag==='function'){gtag('consent','update',{ad_storage:g,analytics_storage:g,ad_user_data:g,ad_personalization:g});}if(b)b.hidden=true;}window.aluOpenConsent=function(){if(b)b.hidden=false;};var a=document.getElementById('cookie-accept'),r=document.getElementById('cookie-reject');if(a)a.addEventListener('click',function(){apply('granted');});if(r)r.addEventListener('click',function(){apply('denied');});if(!stored()&&b)b.hidden=false;})();</script></body>
+<script>(function(){var K='alu-consent',b=document.getElementById('cookie-banner');function stored(){try{return localStorage.getItem(K);}catch(e){return null;}}function apply(state){var g=state==='granted'?'granted':'denied';try{localStorage.setItem(K,state);}catch(e){}if(typeof gtag==='function'){gtag('consent','update',{ad_storage:g,analytics_storage:g,ad_user_data:g,ad_personalization:g});}if(b)b.hidden=true;}window.aluOpenConsent=function(){if(b)b.hidden=false;};var a=document.getElementById('cookie-accept'),r=document.getElementById('cookie-reject');if(a)a.addEventListener('click',function(){apply('granted');});if(r)r.addEventListener('click',function(){apply('denied');});if(!stored()&&b)b.hidden=false;})();</script><script>(function(){document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[rel~="sponsored"]');if(!a||typeof gtag!=='function')return;var host='';try{host=new URL(a.href).hostname;}catch(err){}gtag('event','affiliate_click',{destination_host:host,link_label:(a.getAttribute('aria-label')||a.textContent||'').trim().slice(0,80),page_path:location.pathname});});})();</script></body>
 </html>
