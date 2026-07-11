@@ -85,6 +85,14 @@ footer h4{color:#fff;margin:0 0 10px}
 @media(max-width:760px){.foot-grid{grid-template-columns:1fr 1fr}}
 .copy{border-top:1px solid #24382c;padding:16px 20px;font-size:.8rem;color:#8fa398}
 .fineprint{font-size:.8rem;color:#8fa398}
+/* share row */
+.share{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0}
+.share-label{font-weight:600;margin-right:2px}
+.share a,.share button{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:10px;border:1px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;transition:background .15s,border-color .15s,color .15s;padding:0}
+.share a:hover,.share button:hover{background:var(--green);border-color:var(--green);color:#fff;text-decoration:none}
+.share a:focus-visible,.share button:focus-visible{outline:3px solid var(--green);outline-offset:2px}
+.share svg{width:20px;height:20px;fill:currentColor;pointer-events:none}
+.share-status{font-size:.9rem;color:var(--green-d);font-weight:600}
 /* product cards */
 .pcard{border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;margin:26px 0;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.04)}
 .pcard-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:10px}

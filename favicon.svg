@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="AutoLawn UK">
+  <rect width="512" height="512" rx="112" fill="#1a7f4b"/>
+  <g fill="none" stroke="#ffffff" stroke-width="56" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M256 118 L148 404"/>
+    <path d="M256 118 L364 404"/>
+    <path d="M198 300 L314 300"/>
+  </g>
+</svg>

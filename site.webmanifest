@@ -1,0 +1,13 @@
+{
+  "name": "AutoLawn UK",
+  "short_name": "AutoLawn UK",
+  "description": "Robot lawn mower comparison UK — by garden size, slope and budget.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1a7f4b",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
