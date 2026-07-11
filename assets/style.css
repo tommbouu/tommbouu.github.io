@@ -85,6 +85,17 @@ footer h4{color:#fff;margin:0 0 10px}
 @media(max-width:760px){.foot-grid{grid-template-columns:1fr 1fr}}
 .copy{border-top:1px solid #24382c;padding:16px 20px;font-size:.8rem;color:#8fa398}
 .fineprint{font-size:.8rem;color:#8fa398}
+/* cookie consent banner */
+.cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:60;background:#fff;border-top:1px solid var(--line);box-shadow:0 -4px 20px rgba(0,0,0,.1)}
+.cookie-banner[hidden]{display:none}
+.cookie-inner{display:flex;align-items:center;gap:18px;flex-wrap:wrap;padding:16px 20px}
+.cookie-text{margin:0;flex:1 1 320px;font-size:.9rem;color:var(--slate);line-height:1.5}
+.cookie-actions{display:flex;gap:10px;flex-wrap:wrap}
+.cookie-actions .btn{min-height:44px}
+.cookie-reject{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.cookie-reject:hover{background:var(--bg-soft)}
+.cookie-banner .btn:focus-visible{outline:3px solid var(--green);outline-offset:2px}
+@media(max-width:560px){.cookie-actions{width:100%}.cookie-actions .btn{flex:1}}
 /* share row */
 .share{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0}
 .share-label{font-weight:600;margin-right:2px}

@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HD9W17T2RT"></script>
+<!-- Consent Mode v2 defaults (analytics/ads denied until the visitor accepts) + Google tag -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  (function(){var granted=false;try{granted=localStorage.getItem('alu-consent')==='granted';}catch(e){}
+    gtag('consent','default',{ad_storage:granted?'granted':'denied',analytics_storage:granted?'granted':'denied',ad_user_data:granted?'granted':'denied',ad_personalization:granted?'granted':'denied',functionality_storage:'granted',security_storage:'granted',wait_for_update:500});})();
+  gtag('set','ads_data_redaction',true);
+  gtag('set','url_passthrough',true);
   gtag('js', new Date());
   gtag('config', 'G-HD9W17T2RT');
 </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HD9W17T2RT"></script>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -81,6 +85,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div><a class="brand" href="/">Auto<span>Lawn</span> UK</a><p>Simple UK robot lawn mower comparisons for people who want to automate lawn care without wasting £1,000+ on the wrong mower.</p><p class="fineprint">As an affiliate, AutoLawn UK earns from qualifying purchases made through links on this site.</p></div>
 <div><h4>Categories</h4><a href="/category/wire-free/">Wire-Free Robot Mowers</a><a href="/category/small-gardens/">Small Garden Robot Mowers</a><a href="/category/large-gardens/">Large Garden Robot Mowers</a><a href="/category/slopes-uneven/">Slopes & Uneven Lawns</a><a href="/category/brand-comparisons/">Brand Comparisons</a><a href="/category/installation-setup/">Installation & Setup</a><a href="/category/accessories-maintenance/">Accessories & Maintenance</a><a href="/category/deals/">Deals & Discounts</a><a href="/category/buying-guides/">Buying Guides</a></div>
 <div><h4>Site</h4><a href="/start-here/">Start Here</a><a href="/recommended-robot-mowers/">Recommended Mowers</a><a href="/tools/">Decision Tools</a><a href="/about/">About</a><a href="/contact/">Contact</a></div>
-<div><h4>Legal &amp; Trust</h4><a href="/affiliate-disclosure/">Affiliate Disclosure</a><a href="/privacy-policy/">Privacy Policy</a><a href="/how-we-compare/">How We Compare Products</a><a href="/editorial-policy/">Editorial &amp; Corrections Policy</a></div>
-</div><div class="wrap copy">© 2026 AutoLawn UK. We may earn commission from links on this site. All product names and trademarks belong to their owners.</div></footer></body>
+<div><h4>Legal &amp; Trust</h4><a href="/affiliate-disclosure/">Affiliate Disclosure</a><a href="/privacy-policy/">Privacy Policy</a><a href="/how-we-compare/">How We Compare Products</a><a href="/editorial-policy/">Editorial &amp; Corrections Policy</a><a href="#" onclick="if(window.aluOpenConsent){aluOpenConsent();}return false;">Cookie settings</a></div>
+</div><div class="wrap copy">© 2026 AutoLawn UK. We may earn commission from links on this site. All product names and trademarks belong to their owners.</div></footer><div id="cookie-banner" class="cookie-banner" role="region" aria-label="Cookie consent" hidden>
+<div class="wrap cookie-inner">
+<p class="cookie-text">We'd like to use optional analytics cookies to understand how visitors use AutoLawn UK. No advertising cookies are set. You can change this any time via <strong>Cookie settings</strong> in the footer. See our <a href="/privacy-policy/">privacy policy</a>.</p>
+<div class="cookie-actions">
+<button type="button" id="cookie-reject" class="btn cookie-reject">Reject</button>
+<button type="button" id="cookie-accept" class="btn">Accept analytics</button>
+</div>
+</div></div>
+<script>(function(){var K='alu-consent',b=document.getElementById('cookie-banner');function stored(){try{return localStorage.getItem(K);}catch(e){return null;}}function apply(state){var g=state==='granted'?'granted':'denied';try{localStorage.setItem(K,state);}catch(e){}if(typeof gtag==='function'){gtag('consent','update',{ad_storage:g,analytics_storage:g,ad_user_data:g,ad_personalization:g});}if(b)b.hidden=true;}window.aluOpenConsent=function(){if(b)b.hidden=false;};var a=document.getElementById('cookie-accept'),r=document.getElementById('cookie-reject');if(a)a.addEventListener('click',function(){apply('granted');});if(r)r.addEventListener('click',function(){apply('denied');});if(!stored()&&b)b.hidden=false;})();</script></body>
 </html>
